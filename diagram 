@@ -1,0 +1,32 @@
+System Architecture Diagram
+
+The following diagram illustrates the high-level architecture of an intelligent software development lifecycle, integrating the AI solutions from this assignment.
+
+```mermaid
+graph TD
+    subgraph “Developer Environment”
+        A[IDE] --> B[GitHub Copilot<br>Code Completion];
+        A --> C[DocuGenie<br>Auto-Documentation];
+    end
+
+    subgraph “CI/CD Pipeline (AIOps)”
+        D[Code Commit] --> E[AI-Powered Testing<br>Selenium/Testim.io];
+        E --> F{Predictive Analytics<br>Bug Priority Model};
+        F -- “High Priority Bug” --> G[Alert Developers];
+        F -- “Low Priority Bug” --> H[Auto-log in Backlog];
+        E --> I[Automated Deployment];
+        I --> J[AI Monitoring & RCA];
+    end
+
+    subgraph “Fairness & Ethics”
+        K[IBM AIF360 Toolkit] --> F;
+        L[Bias Audit Logs] --> K;
+    end
+
+    B --> D;
+    C --> D;
+    J -.-> F;
+```
+
+Diagram Explanation:
+The workflow begins in theDeveloper Environment, where AI tools like Copilot and DocuGenie assist in writing and documenting code. Once code is committed, it enters the CI/CD Pipeline. Here, AI-powered automated tests are run. The results, along with code metrics, feed into a Predictive Analytics model that prioritizes bugs. This prioritization directs resources efficiently, with high-priority issues triggering immediate alerts. The entire pipeline is monitored by AIOps for failures and performance. Crucially, the Fairness & Ethics layer, powered by tools like IBM AIF360, continuously audits the predictive model for bias, ensuring that its decisions are fair and do not disadvantage any particular team or part of the codebase. This creates a closed-loop, intelligent, and responsible software development system
